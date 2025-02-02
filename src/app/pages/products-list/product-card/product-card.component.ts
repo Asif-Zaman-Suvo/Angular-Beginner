@@ -8,11 +8,11 @@ import { CartService } from '../../../services/cart.service';
   imports: [PrimaryButtonComponent],
   template: `
     <div
-      class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition-shadow flex flex-col gap-2"
+      class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition-shadow flex flex-col items-center justify-center gap-2"
     >
-      <div class="mx-auto relative">
+      <div class="flex flex-col items-center justify-center text-center">
         <span
-          class="absolute top-0 right-[-20rem] text-sm text-gray-500"
+          class="mb-4 text-sm text-gray-500"
           [class]="
             (product().stock ?? 0) > 0 ? 'text-green-500' : 'text-red-500'
           "
@@ -24,7 +24,7 @@ import { CartService } from '../../../services/cart.service';
           [src]="product().image"
           class="w-[200px] h-[100px] object-contain"
         />
-        <div class="flex flex-col mt-2">
+        <div class="flex flex-col mt-2 items-center justify-center">
           <span class="text-md font-bold">{{ product().title }}</span>
           <span class="text-sm ">{{ '$' + product().price }}</span>
           <app-primary-button
